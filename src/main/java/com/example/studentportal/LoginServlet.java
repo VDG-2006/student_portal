@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
 		
 		String query="SELECT * FROM studentdb WHERE username=? AND password=?";
 		String username=(String) request.getAttribute("username");
-		String password=(String) request.getAttribute("passowrd");
+		String password=(String) request.getAttribute("password");
 		
 		try(Connection conn=DBConnector.getConnector()){
 			PreparedStatement pstmt=conn.prepareStatement(query);
@@ -43,9 +43,13 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("gpa", rs.getDouble("gpa"));
 				
 				response.sendRedirect("dashboard.jsp");
+			} else {
+				request.setAttribute("errorMessage","Invalid username or password");
+				request.getRequestDispatcher("login.jsp").forward(request,response);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+			response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR,"Database connection error");
 		}
 	}
 
