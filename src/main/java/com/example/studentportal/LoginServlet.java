@@ -24,8 +24,8 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String query="SELECT * FROM studentdb WHERE username=? AND password=?";
-		String username=(String) request.getAttribute("username");
-		String password=(String) request.getAttribute("password");
+		String username=request.getParameter("username");
+		String password=request.getParameter("password");
 		
 		try(Connection conn=DBConnector.getConnector()){
 			PreparedStatement pstmt=conn.prepareStatement(query);
