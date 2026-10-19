@@ -5,26 +5,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Login</title>
 </head>
 <body>
 	<div class="card">
-		<% if("true".equals(request.getParameter("registered"))){ %>
-			<p style="color: green;"> Registration Successful!Please log in.</p>
+		<h2>Student Portal Login</h2>
+		
+		<% if ("true".equals(request.getParameter("registered"))) { %>
+			<div class="alert-success">Registration Successful! Please log in.</div>
 		<% } %>
 
-		<% if(request.getAttribute("errorMessage")!=null) { %>
-			<p style="color: red; font-weight: bold;">
-				<%= request.getAttribute("errorMessage") %>
-			</p>
+		<% if (request.getAttribute("errorMessage") != null) { %>
+			<div class="alert-error"><%= request.getAttribute("errorMessage") %></div>
 		<% } %>
+
 		<form action="LoginServlet" method="post">
-			<label for="username">Username:</label>
-			<input type="text" id="username" name="username" required>
+			<div class="form-group">
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username" required>
+			</div>
 
-			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" required>
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required>
+			</div>
 
 			<button type="submit">Log In</button>
 		</form>
