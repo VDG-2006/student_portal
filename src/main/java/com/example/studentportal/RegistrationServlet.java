@@ -23,8 +23,9 @@ public class RegistrationServlet extends HttpServlet {
     	String confirmPassword=request.getParameter("confirmPassword");
     	String fullName=request.getParameter("fullName");
     	String gpaStr=request.getParameter("gpa");
+    	String major=request.getParameter("major");
     	
-    	if(password==null || !password.equals(confirmPassword)) {
+    	if(password==null || confirmPassword==null || !password.equals(confirmPassword)) {
     		request.setAttribute("errorMessage", "Passwords do not match.");
     		request.getRequestDispatcher("register.jsp").forward(request, response);
     		return;
@@ -40,7 +41,7 @@ public class RegistrationServlet extends HttpServlet {
     		return;
     	}
     	
-    	String query="INSERT INTO studentdb(username,password,fullname,gpa) VALUES(?,?,?,?)";
+    	String query="INSERT INTO student(username,password,fullname,gpa,major) VALUES(?,?,?,?,?)";
     	
     	try(Connection conn=DBConnector.getConnector();
     		PreparedStatement pstmt=conn.prepareStatement(query);){
@@ -48,6 +49,7 @@ public class RegistrationServlet extends HttpServlet {
     		pstmt.setString(2, password);
     		pstmt.setString(3, fullName);
     		pstmt.setDouble(4, gpa);
+    		pstmt.setString(5, major);
     		
     		int row=pstmt.executeUpdate();
     		if(row>0) {

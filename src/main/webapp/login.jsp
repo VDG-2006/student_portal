@@ -7,6 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<div class="card">
@@ -33,6 +34,7 @@
 
 			<button type="submit">Log In</button>
 		</form>
+		<p>Don't have an account? <a href="register.jsp" >Register here</a></p>
 	</div>
 </body>
 </html>

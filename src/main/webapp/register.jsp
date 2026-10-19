@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<div class="card">
@@ -31,6 +31,9 @@
 
             <label for="gpa">GPA:</label>
 			<input type="text" id="gpa" name="gpa" required>
+			
+			<label for="major">Major:</label>
+			<input type="text" id="major" name="major" required>
 
 			<button type="submit">Register</button>
 		</form>

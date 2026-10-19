@@ -8,13 +8,14 @@
     String username = (String) session.getAttribute("username");
     String fullname = (String) session.getAttribute("fullname");
     Double gpa = (Double) session.getAttribute("gpa");
+    String major = (String) session.getAttribute("major");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Student Portal - Dashboard</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <div class="dashboard-container">
@@ -39,6 +40,10 @@
                 <tr>
                     <th>GPA:</th>
                     <td><%= gpa != null ? String.format("%.2f", gpa) : "N/A" %></td>
+                </tr>
+                <tr>
+                	<th>Major:</th>
+                	<td><%= major %></td>
                 </tr>
             </table>
         </div>

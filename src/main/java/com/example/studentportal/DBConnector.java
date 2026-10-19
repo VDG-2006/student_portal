@@ -12,6 +12,11 @@ public class DBConnector {
 	private DBConnector() {}
 	
 	public static Connection getConnector() throws SQLException{
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		return DriverManager.getConnection(URL,USER,PASSWORD);
 	}
 }

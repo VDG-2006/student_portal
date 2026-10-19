@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String query="SELECT * FROM studentdb WHERE username=? AND password=?";
+		String query="SELECT * FROM student WHERE username=? AND password=?";
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
 		
@@ -41,6 +41,7 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("username", username);
 				session.setAttribute("fullname", rs.getString("fullname"));
 				session.setAttribute("gpa", rs.getDouble("gpa"));
+				session.setAttribute("major", rs.getString("major"));
 				
 				response.sendRedirect("dashboard.jsp");
 			} else {
