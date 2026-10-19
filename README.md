@@ -172,7 +172,3 @@ sequenceDiagram
 | `/RegistrationServlet` | `POST` | Public | Validates and inserts a new student. |
 | `/dashboard.jsp` | `GET` | **Protected** | Displays the authenticated student's profile. |
 | `/LogoutServlet` | `GET` | **Protected** | Invalidates the session and redirects to login. |
-
-## 📄 License
-
-Distributed under the **MIT License**. See [LICENSE](LICENSE) for more information.
