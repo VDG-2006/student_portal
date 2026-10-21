@@ -6,7 +6,6 @@
 [![Jakarta EE](https://img.shields.io/badge/Jakarta%20EE-11-EE0000?style=for-the-badge&logo=jakartaee&logoColor=white)](https://jakarta.ee/)
 [![Apache Tomcat](https://img.shields.io/badge/Apache%20Tomcat-11.0-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=black)](https://tomcat.apache.org/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
 *A full-stack, session-managed web application for student registration, authentication, and profile tracking.*
 
